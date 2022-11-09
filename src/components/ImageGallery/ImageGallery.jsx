@@ -5,10 +5,10 @@ import PropTypes from 'react';
 export default function ImageGallery({ images, openModal }) {
   return (
     <Gallery class="gallery">
-      {images.map(({ id, webformatURL }, index) => (
+      {images.map(({ id, webformatUrl }, index) => (
         <ImageGalleryItem
           key={id}
-          webformatURL={webformatURL}
+          webformatUrl={webformatUrl}
           index={index}
           openModal={openModal}
         />
@@ -22,7 +22,7 @@ ImageGallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      webformatURL: PropTypes.string.isRequired,
+      webformatUrl: PropTypes.string.isRequired,
     })
   ),
 };

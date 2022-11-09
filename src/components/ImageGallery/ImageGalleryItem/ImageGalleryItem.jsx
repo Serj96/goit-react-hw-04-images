@@ -2,15 +2,19 @@ import PropTypes from 'prop-types';
 import {GalleryItem, GalleryItem_img} from './ImageGalleryItem.styled'
 
 
-export default function ImageGalleryItem({ webformatURL, openModal }) {
+export default function ImageGalleryItem({ webformatUrl, openModal, index }) {
   return (
     <GalleryItem class="gallery-item">
-      <GalleryItem_img src={webformatURL} alt="" onClick={() => openModal()} />
+      <GalleryItem_img
+        src={webformatUrl}
+        alt=""
+        onClick={() => openModal(index)}
+      />
     </GalleryItem>
   );
 }
 
 ImageGalleryItem.propTypes = {
-  webformatURL: PropTypes.string.isRequired,
+  webformatUrl: PropTypes.string.isRequired,
   openModal: PropTypes.func.isRequired,
 };
