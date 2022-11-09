@@ -81,7 +81,7 @@ export class App extends Component {
       <Section>
         <SearchBar onSubmit={onSubmit} />
         {images.length !== 0 && (
-          <ImageGallery images={images} openModal={openModal} />
+          <ImageGallery images={images} openModal={this.openModal} />
         )}
         {showModal && (
           <Modal toggleModal={toggleModal} largeImage={largeImage} />
