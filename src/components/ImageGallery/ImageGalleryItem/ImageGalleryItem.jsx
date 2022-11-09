@@ -1,4 +1,6 @@
-import PropTypes from 'react';
+import PropTypes from 'prop-types';
+import {GalleryItem, GalleryItem_img} from './ImageGalleryItem.styled'
+
 
 export default function ImageGalleryItem({ webformatURL, openModal }) {
   return (

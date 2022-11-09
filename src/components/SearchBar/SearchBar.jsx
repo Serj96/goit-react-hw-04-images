@@ -6,29 +6,30 @@ import {
   SearchForm_button_label,
   SearchForm_input,
 } from './SearchBar.styled';
+import PropTypes from 'prop-types';
 
 export default class SearchBar extends Component {
   state = {
-    id: '',
-    smallImg: '',
-    largImg: '',
+    searchData: '',
+  };
+
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
   };
 
   handeleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
-    this.resert();
+    this.props.onSubmit(this.state.searchData);
   };
 
-  reset = () => {
-    this.setState({ id: '', smallImg: '', largImg: '' });
+  handelChange = e => {
+    this.setState({ searchData: e.target });
   };
 
   render() {
-    const handeleSubmit = this.handeleSubmit;
     return (
       <Header class="searchbar">
-        <SearchForm class="form" onSubmit={handeleSubmit}>
+        <SearchForm class="form" onSubmit={this.handeleSubmit}>
           <SearchForm_button type="submit" class="button">
             <SearchForm_button_label class="button-label">
               Search
@@ -40,6 +41,7 @@ export default class SearchBar extends Component {
             autocomplete="off"
             autofocus
             placeholder="Search images and photos"
+            onChange={this.handelChange}
           />
         </SearchForm>
       </Header>

@@ -4,6 +4,7 @@ import Modal from './Modal/Modal';
 import SearchBar from './SearchBar/SearchBar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
+import Loader from './Loader/Loader';
 
 export class App extends Component {
   state = {
@@ -16,7 +17,7 @@ export class App extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    
+
   }
 
   render() {
@@ -30,6 +31,7 @@ export class App extends Component {
         )}
         <SearchBar />
         <ImageGallery />
+        <Loader/>
         <Button />
       </Section>
     );
