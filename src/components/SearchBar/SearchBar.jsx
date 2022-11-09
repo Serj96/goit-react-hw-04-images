@@ -8,10 +8,27 @@ import {
 } from './SearchBar.styled';
 
 export default class SearchBar extends Component {
+  state = {
+    id: '',
+    smallImg: '',
+    largImg: '',
+  };
+
+  handeleSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
+    this.resert();
+  };
+
+  reset = () => {
+    this.setState({ id: '', smallImg: '', largImg: '' });
+  };
+
   render() {
+    const handeleSubmit = this.handeleSubmit;
     return (
       <Header class="searchbar">
-        <SearchForm class="form">
+        <SearchForm class="form" onSubmit={handeleSubmit}>
           <SearchForm_button type="submit" class="button">
             <SearchForm_button_label class="button-label">
               Search

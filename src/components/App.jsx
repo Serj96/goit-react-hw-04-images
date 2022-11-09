@@ -7,9 +7,17 @@ import Button from './Button/Button';
 
 export class App extends Component {
   state = {
+    searchData: '',
+    images: [],
+    page: 0,
     showModal: false,
     loading: false,
+    error: null,
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    
+  }
 
   render() {
     const { showModal } = this.state;

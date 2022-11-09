@@ -21,12 +21,12 @@ export const ButtonLoad = styled.button`
   }
 
   &:focus {
-    box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+    box-shadow: rgba(46, 95, 164, 0.4) 0 0 0 3px;
     outline: none;
   }
 
   &:active {
-    background-color: #298e46;
-    box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+    background-color: #4d68eb;
+    box-shadow: rgba(77, 104, 235, 0.2) 0 1px 0 inset;
   }
 `;

@@ -1,11 +1,14 @@
+import PropTypes from 'react';
 
-
-const ImageGalleryItem = () => {
+export default function ImageGalleryItem({ webformatURL, openModal }) {
   return (
     <GalleryItem class="gallery-item">
-      <GalleryItem_img src="" alt="" />
+      <GalleryItem_img src={webformatURL} alt="" onClick={() => openModal()} />
     </GalleryItem>
   );
-};
+}
 
-export default ImageGalleryItem;
+ImageGalleryItem.propTypes = {
+  webformatURL: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
+};
