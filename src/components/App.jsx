@@ -31,10 +31,10 @@ export class App extends Component {
         response.then(data => {
           data.data.hits.length === 0
             ? toast.error('Nothing found')
-            : data.data.hits.forEach(({ id, webformatUrl, largeImageUrl }) => {
+            : data.data.hits.forEach(({ id, webformatURL, largeImageURL }) => {
                 !images.some(image => image.id === id) &&
                   this.setState(({ images }) => ({
-                    images: [...images, { id, webformatUrl, largeImageUrl }],
+                    images: [...images, { id, webformatURL, largeImageURL }],
                   }));
               });
           this.setState({ loading: false });
@@ -75,23 +75,21 @@ export class App extends Component {
   };
 
   render() {
-    const { toggleModal, openModal, nextPage, onSubmit } = this;
+    const { toggleModal, openModal, nextPage } = this;
     const { images, loading, largeImage, showModal } = this.state;
     return (
-      <div>
-        <Section>
-          <SearchBar onSubmit={onSubmit} />
-          {images.length !== 0 && (
-            <ImageGallery images={images} openModal={openModal} />
-          )}
-          {showModal && (
-            <Modal toggleModal={toggleModal} largeImage={largeImage} />
-          )}
-          {loading && <Loader />}
-          <ToastContainer autoClose={2500} />
-          {images.length >= 12 && <Button nextPage={nextPage} />}
-        </Section>
-      </div>
+      <Section>
+        <SearchBar onSubmit={this.onSubmit} />
+        {images.length !== 0 && (
+          <ImageGallery images={images} openModal={openModal} />
+        )}
+        {showModal && (
+          <Modal toggleModal={toggleModal} largeImage={largeImage} />
+        )}
+        {loading && <Loader />}
+        <ToastContainer autoClose={2500} />
+        {images.length >= 12 && <Button nextPage={nextPage} />}
+      </Section>
     );
   }
 }

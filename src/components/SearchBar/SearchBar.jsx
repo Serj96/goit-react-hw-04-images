@@ -17,13 +17,14 @@ export default class SearchBar extends Component {
     onSubmit: PropTypes.func.isRequired,
   };
 
-  handeleSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state.searchData);
   };
 
-  handelChange = e => {
-    this.setState({ searchData: e.target });
+  handleChange = evt => {
+    const { value } = evt.target;
+    this.setState({ searchData: value });
   };
 
   render() {
