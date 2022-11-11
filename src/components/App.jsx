@@ -31,16 +31,16 @@ export class App extends Component {
         response.then(data => {
           data.data.hits.length === 0
             ? toast.error('Nothing found')
-            : data.data.hits.forEach(({ id, webformatUrl, largeImageURL }) => {
+            : data.data.hits.forEach(({ id, webformatUrl, largeImageUrl }) => {
                 !images.some(image => image.id === id) &&
                   this.setState(({ images }) => ({
-                    images: [...images, { id, webformatUrl, largeImageURL }],
+                    images: [...images, { id, webformatUrl, largeImageUrl }],
                   }));
               });
-          this.setState({ isLoading: false });
+          this.setState({ loading: false });
         });
       } catch (error) {
-        this.setState({ error, isLoading: false });
+        this.setState({ error, loading: false });
       } finally {
       }
     }
@@ -82,8 +82,8 @@ export class App extends Component {
         <Section>
           <SearchBar onSubmit={onSubmit} />
           {images.length !== 0 && (
-          <ImageGallery images={images} openModal={openModal} />
-        )}
+            <ImageGallery images={images} openModal={openModal} />
+          )}
           {showModal && (
             <Modal toggleModal={toggleModal} largeImage={largeImage} />
           )}
