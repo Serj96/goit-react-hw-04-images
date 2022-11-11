@@ -78,18 +78,20 @@ export class App extends Component {
     const { toggleModal, openModal, nextPage, onSubmit } = this;
     const { images, loading, largeImage, showModal } = this.state;
     return (
-      <Section>
-        <SearchBar onSubmit={onSubmit} />
-        {images.length !== 0 && (
-          <ImageGallery images={images} openModal={this.openModal} />
+      <div>
+        <Section>
+          <SearchBar onSubmit={onSubmit} />
+          {images.length !== 0 && (
+          <ImageGallery images={images} openModal={openModal} />
         )}
-        {showModal && (
-          <Modal toggleModal={toggleModal} largeImage={largeImage} />
-        )}
-        {loading && <Loader />}
-        <ToastContainer autoClose={2500} />
-        {images.length >= 12 && <Button nextPage={nextPage} />}
-      </Section>
+          {showModal && (
+            <Modal toggleModal={toggleModal} largeImage={largeImage} />
+          )}
+          {loading && <Loader />}
+          <ToastContainer autoClose={2500} />
+          {images.length >= 12 && <Button nextPage={nextPage} />}
+        </Section>
+      </div>
     );
   }
 }

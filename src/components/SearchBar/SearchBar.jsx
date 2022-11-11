@@ -28,18 +28,18 @@ export default class SearchBar extends Component {
 
   render() {
     return (
-      <Header class="searchbar">
-        <SearchForm class="form" onSubmit={this.handeleSubmit}>
-          <SearchForm_button type="submit" class="button">
-            <SearchForm_button_label class="button-label">
+      <Header className="searchbar">
+        <SearchForm className="form" onSubmit={this.handeleSubmit}>
+          <SearchForm_button type="submit" className="button">
+            <SearchForm_button_label className="button-label">
               Search
             </SearchForm_button_label>
           </SearchForm_button>
           <SearchForm_input
-            class="input"
+            className="input"
             type="text"
             autocomplete="off"
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
             onChange={this.handelChange}
           />
