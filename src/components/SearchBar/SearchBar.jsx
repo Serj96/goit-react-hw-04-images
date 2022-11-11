@@ -30,7 +30,7 @@ export default class SearchBar extends Component {
   render() {
     return (
       <Header className="searchbar">
-        <SearchForm className="form" onSubmit={this.handeleSubmit}>
+        <SearchForm className="form" onSubmit={this.handleSubmit}>
           <SearchForm_button type="submit" className="button">
             <SearchForm_button_label className="button-label">
               Search
@@ -42,7 +42,7 @@ export default class SearchBar extends Component {
             autocomplete="off"
             autoFocus
             placeholder="Search images and photos"
-            onChange={this.handelChange}
+            onChange={this.handleChange}
           />
         </SearchForm>
       </Header>

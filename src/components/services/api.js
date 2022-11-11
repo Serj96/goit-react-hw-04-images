@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function fetchImagesQuery(searchQuery, page) {
   const response = axios.get(
-    `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=29355896-24b645639f363894e45fb57cb&image_type=photo&orientation=horizontal&per_page=12`
+    `https://pixabay.com/api/?q=${searchQuery}&page=${page}&key=30394221-a2970c3eae9beef771f498960&image_type=photo&orientation=horizontal&per_page=12`
   );
   return response;
 }
