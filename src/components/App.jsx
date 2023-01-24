@@ -16,7 +16,7 @@ export const App = () => {
   const [largeImage, setLargeImage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [ error, setError] = useState(null);
 
   useEffect(() => {
     if (!page) {
@@ -39,7 +39,7 @@ export const App = () => {
       setError(error);
       setIsLoading(false);
     }
-  }, [page, searchData]);
+  }, [page, searchData, images]);
 
   const onSubmit = newSearchData => {
     if (newSearchData.trim() === '') {
