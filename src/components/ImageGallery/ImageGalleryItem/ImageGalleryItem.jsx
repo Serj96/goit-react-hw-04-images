@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { GalleryItem, GalleryItem_img } from './ImageGalleryItem.styled';
+import { GalleryItem, GalleryItemImg } from './ImageGalleryItem.styled';
 
 export default function ImageGalleryItem({ webformatURL, openModal, index }) {
   return (
     <GalleryItem className="gallery-item">
-      <GalleryItem_img
+      <GalleryItemImg
         src={webformatURL}
         alt=""
         onClick={() => openModal(index)}
